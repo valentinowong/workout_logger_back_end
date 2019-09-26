@@ -8,20 +8,17 @@
 
 User.create(username: 'Valentino', password_digest: '123456')
 
-Category.create(name: 'Cardio')
-Category.create(name: 'Weightlifting')
-
-Exercise.create(name: 'Running', category_id: Category.find_by(name: 'Cardio').id)
-Exercise.create(name: 'Biking', category_id: Category.find_by(name: 'Cardio').id)
-Exercise.create(name: 'Swimming', category_id: Category.find_by(name: 'Cardio').id)
-Exercise.create(name: 'Bench Press', category_id: Category.find_by(name: 'Weightlifting').id)
+Exercise.create(name: 'Running')
+Exercise.create(name: 'Biking')
+Exercise.create(name: 'Swimming')
+Exercise.create(name: 'Bench Press')
 
 Routine.create(name: 'Running & Lifting')
 
-RoutineExercise.create(routine_id: Routine.find_by(name: 'Running & Lifting').id, exercise_id: Exercise.find_by(name: 'Running').id, quantity: 0, weight: 0, distance: 3)
-RoutineExercise.create(routine_id: Routine.find_by(name: 'Running & Lifting').id, exercise_id: Exercise.find_by(name: 'Bench Press').id, quantity: 10, weight: 135, distance: 0)
+RoutineExercise.create(routine_id: Routine.find_by(name: 'Running & Lifting').id, exercise_id: Exercise.find_by(name: 'Running').id, quantity: 0, weight: 0, distance: 3, duration: 0)
+RoutineExercise.create(routine_id: Routine.find_by(name: 'Running & Lifting').id, exercise_id: Exercise.find_by(name: 'Bench Press').id, quantity: 10, weight: 135, distance: 0, duration: 0)
 
 Workout.create(user_id: User.find_by(username: 'Valentino').id, routine_id: Routine.find_by(name: 'Running & Lifting').id, title: "Valentino's Wednesday Lunch Workout", datetime: Time.now, photo: "https://d2z0k43lzfi12d.cloudfront.net/blog/vcdn277/wp-content/uploads/2018/04/thumbnail_8-tips-beginner_1200x800-1024x683.jpg")
 
-Completion.create(workout_id: Workout.find_by(title: "Valentino's Wednesday Lunch Workout").id, exercise_id: Exercise.find_by(name: 'Running').id, quantity: 0, weight: 0, distance: 3)
-Completion.create(workout_id: Workout.find_by(title: "Valentino's Wednesday Lunch Workout").id, exercise_id: Exercise.find_by(name: 'Bench Press').id, quantity: 10, weight: 135, distance: 0)
+Completion.create(workout_id: Workout.find_by(title: "Valentino's Wednesday Lunch Workout").id, exercise_id: Exercise.find_by(name: 'Running').id, quantity: 0, weight: 0, distance: 3, duration: 1440)
+Completion.create(workout_id: Workout.find_by(title: "Valentino's Wednesday Lunch Workout").id, exercise_id: Exercise.find_by(name: 'Bench Press').id, quantity: 10, weight: 135, distance: 0, duration: 0)

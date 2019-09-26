@@ -6,6 +6,7 @@ class CreateRoutineExercises < ActiveRecord::Migration[5.2]
       t.integer :quantity
       t.float :distance
       t.float :weight
+      t.integer :duration
 
       t.timestamps
     end
