@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  datetime: 2019-09-25 17:26:19
+  photo: MyString
+  user_id: 1
+  routine_id: 1
+
+two:
+  title: MyString
+  datetime: 2019-09-25 17:26:19
+  photo: MyString
+  user_id: 1
+  routine_id: 1
