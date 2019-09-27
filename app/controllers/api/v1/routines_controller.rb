@@ -10,6 +10,16 @@ class Api::V1::RoutinesController < ApplicationController
   private
 
   def routine_params
-    params.require(:routine).permit(:name)
+    params.require(:routine).permit(
+      :name,
+      :description,
+      routine_exercises_attributes: [
+        :exercise_id,
+        :quantity,
+        :distance,
+        :weight,
+        :duration
+      ]
+    )
   end
 end

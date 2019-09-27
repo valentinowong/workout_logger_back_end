@@ -8,7 +8,7 @@
 
 User.create(username: "Valentino", password_digest: "123456")
 
-Routine.create(name: 'Running & Lifting')
+Routine.create(name: 'Running & Lifting', description: "A quick cardio and strength workout.")
 
 exercises = [
 "Deadlift",

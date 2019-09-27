@@ -20,4 +20,5 @@ json.title @workout.title
 json.datetime @workout.datetime
 json.photo @workout.photo
 json.routine_name @workout.routine.name
+json.routine_description @workout.routine.description
 json.exercises workout_exercises

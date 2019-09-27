@@ -15,6 +15,7 @@ json.array! @routines do |routine|
     
     json.id routine.id
     json.name routine.name
+    json.description routine.description
     json.exercises routine_exercises
     
   end
