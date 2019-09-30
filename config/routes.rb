@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       post '/authenticate', to: 'auth#create'
+      get '/authenticate', to: 'auth#show'
 
       resources :users, only: [:create] do
         resources :workouts, only: [:index, :create, :update, :destroy]

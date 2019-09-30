@@ -6,7 +6,7 @@ class Api::V1::UsersController < ApplicationController
         @user = User.create(user_params)
         #generate a JWT Token
         #return the JWT token, along with the userobject to the frontend
-        render json: { currentUser: @user, token: encode_token(@user.id)}
+        render json: {currentUser: @user, token: encode_token({id: user.id})}
     end 
 
     private

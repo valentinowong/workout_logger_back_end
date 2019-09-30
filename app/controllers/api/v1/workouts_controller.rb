@@ -1,6 +1,5 @@
 class Api::V1::WorkoutsController < ApplicationController
   before_action :set_workout, only: [:update, :destroy]
-  skip_before_action :authorized
   
   def index
     @user = User.find(params[:user_id])

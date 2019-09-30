@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-User.create(username: "Valentino", password_digest: "123456")
+# User.create(username: "Valentino", password_digest: "123456")
 
 Routine.create(name: 'Running & Lifting', description: "A quick cardio and strength workout.")
 
@@ -262,7 +262,7 @@ end
 RoutineExercise.create(routine_id: Routine.find_by(name: 'Running & Lifting').id, exercise_id: Exercise.find_by(name: 'Run').id, quantity: nil, weight: nil, distance: 3, duration: nil)
 RoutineExercise.create(routine_id: Routine.find_by(name: 'Running & Lifting').id, exercise_id: Exercise.find_by(name: 'Bench Press').id, quantity: 10, weight: 135, distance: nil, duration: nil)
 
-Workout.create(user_id: User.find_by(username: 'Valentino').id, routine_id: Routine.find_by(name: 'Running & Lifting').id, title: "Valentino's Wednesday Lunch Workout", datetime: Time.now, photo: "https://d2z0k43lzfi12d.cloudfront.net/blog/vcdn277/wp-content/uploads/2018/04/thumbnail_8-tips-beginner_1200x800-1024x683.jpg")
+# Workout.create(user_id: User.find_by(username: 'Valentino').id, routine_id: Routine.find_by(name: 'Running & Lifting').id, title: "Valentino's Wednesday Lunch Workout", datetime: Time.now, photo: "https://d2z0k43lzfi12d.cloudfront.net/blog/vcdn277/wp-content/uploads/2018/04/thumbnail_8-tips-beginner_1200x800-1024x683.jpg")
 
-Completion.create(workout_id: Workout.find_by(title: "Valentino's Wednesday Lunch Workout").id, exercise_id: Exercise.find_by(name: 'Run').id, quantity: nil, weight: nil, distance: 3, duration: 1440)
-Completion.create(workout_id: Workout.find_by(title: "Valentino's Wednesday Lunch Workout").id, exercise_id: Exercise.find_by(name: 'Bench Press').id, quantity: 10, weight: 135, distance: nil, duration: nil)
+# Completion.create(workout_id: Workout.find_by(title: "Valentino's Wednesday Lunch Workout").id, exercise_id: Exercise.find_by(name: 'Run').id, quantity: nil, weight: nil, distance: 3, duration: 1440)
+# Completion.create(workout_id: Workout.find_by(title: "Valentino's Wednesday Lunch Workout").id, exercise_id: Exercise.find_by(name: 'Bench Press').id, quantity: 10, weight: 135, distance: nil, duration: nil)
