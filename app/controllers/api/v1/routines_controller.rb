@@ -1,4 +1,5 @@
 class Api::V1::RoutinesController < ApplicationController
+  skip_before_action :authorized
   def index
     @routines = Routine.all
   end

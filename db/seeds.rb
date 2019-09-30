@@ -259,10 +259,10 @@ exercises.each do |exercise|
     Exercise.create(name: exercise)
 end
 
-RoutineExercise.create(routine_id: Routine.find_by(name: 'Running & Lifting').id, exercise_id: Exercise.find_by(name: 'Run').id, quantity: 0, weight: 0, distance: 3, duration: 0)
-RoutineExercise.create(routine_id: Routine.find_by(name: 'Running & Lifting').id, exercise_id: Exercise.find_by(name: 'Bench Press').id, quantity: 10, weight: 135, distance: 0, duration: 0)
+RoutineExercise.create(routine_id: Routine.find_by(name: 'Running & Lifting').id, exercise_id: Exercise.find_by(name: 'Run').id, quantity: nil, weight: nil, distance: 3, duration: nil)
+RoutineExercise.create(routine_id: Routine.find_by(name: 'Running & Lifting').id, exercise_id: Exercise.find_by(name: 'Bench Press').id, quantity: 10, weight: 135, distance: nil, duration: nil)
 
 Workout.create(user_id: User.find_by(username: 'Valentino').id, routine_id: Routine.find_by(name: 'Running & Lifting').id, title: "Valentino's Wednesday Lunch Workout", datetime: Time.now, photo: "https://d2z0k43lzfi12d.cloudfront.net/blog/vcdn277/wp-content/uploads/2018/04/thumbnail_8-tips-beginner_1200x800-1024x683.jpg")
 
-Completion.create(workout_id: Workout.find_by(title: "Valentino's Wednesday Lunch Workout").id, exercise_id: Exercise.find_by(name: 'Run').id, quantity: 0, weight: 0, distance: 3, duration: 1440)
-Completion.create(workout_id: Workout.find_by(title: "Valentino's Wednesday Lunch Workout").id, exercise_id: Exercise.find_by(name: 'Bench Press').id, quantity: 10, weight: 135, distance: 0, duration: 0)
+Completion.create(workout_id: Workout.find_by(title: "Valentino's Wednesday Lunch Workout").id, exercise_id: Exercise.find_by(name: 'Run').id, quantity: nil, weight: nil, distance: 3, duration: 1440)
+Completion.create(workout_id: Workout.find_by(title: "Valentino's Wednesday Lunch Workout").id, exercise_id: Exercise.find_by(name: 'Bench Press').id, quantity: 10, weight: 135, distance: nil, duration: nil)
