@@ -12,7 +12,7 @@ class Api::V1::AuthController < ApplicationController
     end 
 
     def show
-        render json: current_user
+        render json: {currentUser: current_user}
     end 
 end
  
