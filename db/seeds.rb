@@ -6,13 +6,12 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-# User.create(username: "Valentino", password_digest: "123456")
-
 exercises = [
     'Deadlift',
     'Sumo Deadlift',
     'Romanian Deadlift',
     'Snatch Grip Deadlift',
+    'Straight Leg Deadlift',
     'Clean',
     'Muscle Clean',
     'Power Clean',
@@ -83,6 +82,10 @@ exercises = [
     'Dumbbell Decline Bench Press',
     'Dumbbell Floor Press',
     'Dumbbell Bent Over Row',
+    'Dumbbell Bent Over Reverse Fly',
+    'Bent-Over Reverse Fly',
+    'Dumbbell Bicep Curl',
+    'Bicep Curl + Shoulder Press',
     'Dumbbell Walking Lunge',
     'Dumbbell Reverse Walking Lunge',
     'Dumbbell Front-Rack Walking Lunge',
@@ -134,8 +137,10 @@ exercises = [
     'Single-Arm Dumbbell Front-Rack Reverse Lunge',
     'Single-Arm Dumbbell Overhead Forward Lunge',
     'Single-Arm Dumbbell Overhead Reverse Lunge',
+    'Weighted Static Lunge',
     'Dumbbell Turkish Get-Up',
     'Kettlebell Deadlift',
+    'Straight Leg Kettlebell Deadlift',
     'Kettlebell Clean',
     'Kettlebell Hang Clean',
     'Kettlebell Shoulder to Overhead',
@@ -193,9 +198,11 @@ exercises = [
     'Dual-Kettlebell Overhead Forward Lunge',
     'Dual-Kettlebell Overhead Reverse Lunge',
     'Kettlebell Turkish Get-Up',
+    'Squat',
     'Air Squat',
     'Jump Squat',
     'Jumping Squat',
+    'Split Squat',
     'Sumo Squat',
     'Double Bench Squat',
     'Tuck Jump',
@@ -206,6 +213,8 @@ exercises = [
     'Box Step Up With Knee Raise',
     'Box Jump',
     'Box Jump Over',
+    'Bench Jump',
+    'Bench Hop',
     'Pistol',
     'Wall Ball',
     'Jumping Lunge',
@@ -213,6 +222,7 @@ exercises = [
     'Reverse Lunge',
     'Walking Lunge',
     'Reverse Walking Lunge',
+    'Rebound Lunge',
     'Ring Row',
     'Jumping Pull-up',
     'Pull-Up',
@@ -230,12 +240,15 @@ exercises = [
     'Static Bar L-Sit',
     'Static Bar Tuck Hold',
     'Push-Up',
-    'Lay Down Push Ups',
+    'Incline Push-Up',
+    'Decline Push-Up',
+    'Lay-Down Push Up',
     'Rope Climb',
     'Handstand Push-Up',
     'Strict Handstand Push-Up',
     'Ring Dips',
-    'Tricep Dips',
+    'Tricep Dip',
+    'Double-Pulse Tricep Dip',
     'Sit-Up',
     'Sit-Ups With Twist',
     'Tuck-Up',
@@ -256,9 +269,12 @@ exercises = [
     'Side Plank',
     'Forearm Plank',
     'Forearm Side Plank',
+    'Stationary Caterpillar Walk',
+    'Commando',
     'Russian Twist',
-    'Mountain climbers',
+    'Mountain Climber',
     'Jumping Jack',
+    'X Jump',
     'Burpee',
     'Burpee Box Jump Over',
     'Run',
@@ -273,7 +289,8 @@ exercises = [
     'Single-Unders',
     'Double-Unders',
     'Triple-Unders',
-    'Medicine ball squat & press']
+    'Medicine ball squat & press'
+]
     
 exercises.each do |exercise|
     Exercise.create(name: exercise)
@@ -284,9 +301,26 @@ Routine.create(name: 'Running & Lifting', description: "A quick cardio and stren
 RoutineExercise.create(routine_id: Routine.find_by(name: 'Running & Lifting').id, exercise_id: Exercise.find_by(name: 'Run').id, quantity: nil, weight: nil, distance: 3, duration: nil)
 RoutineExercise.create(routine_id: Routine.find_by(name: 'Running & Lifting').id, exercise_id: Exercise.find_by(name: 'Bench Press').id, quantity: 10, weight: 135, distance: nil, duration: nil)
 
-Routine.create(name: 'Sweat With Kayla Leg Workout', description: "")
+Routine.create(name: 'Sweat With Kayla Summer Series - Week 1 - Leg Workout', description: "For a 14-minute workout, complete the 1st four exercises as many times as you can in seven minutes. Once completed, have a 30-60 second break and repeat this process with the 2nd four exercises. For a 28-minute workout, complete both sets again! ")
 
-# Workout.create(user_id: User.find_by(username: 'Valentino').id, routine_id: Routine.find_by(name: 'Running & Lifting').id, title: "Valentino's Wednesday Lunch Workout", datetime: Time.now, photo: "https://d2z0k43lzfi12d.cloudfront.net/blog/vcdn277/wp-content/uploads/2018/04/thumbnail_8-tips-beginner_1200x800-1024x683.jpg")
+RoutineExercise.create(routine_id: Routine.find_by(name: 'Sweat With Kayla Summer Series - Week 1 - Leg Workout').id, exercise_id: Exercise.find_by(name: 'Straight Leg Deadlift').id, quantity: 15, weight: 20, distance: nil, duration: nil)
+RoutineExercise.create(routine_id: Routine.find_by(name: 'Sweat With Kayla Summer Series - Week 1 - Leg Workout').id, exercise_id: Exercise.find_by(name: 'Split Squat').id, quantity: 15, weight: nil, distance: nil, duration: nil)
+RoutineExercise.create(routine_id: Routine.find_by(name: 'Sweat With Kayla Summer Series - Week 1 - Leg Workout').id, exercise_id: Exercise.find_by(name: 'Rebound Lunge').id, quantity: 20, weight: nil, distance: nil, duration: nil)
+RoutineExercise.create(routine_id: Routine.find_by(name: 'Sweat With Kayla Summer Series - Week 1 - Leg Workout').id, exercise_id: Exercise.find_by(name: 'Bench Jump').id, quantity: 12, weight: nil, distance: nil, duration: nil)
 
-# Completion.create(workout_id: Workout.find_by(title: "Valentino's Wednesday Lunch Workout").id, exercise_id: Exercise.find_by(name: 'Run').id, quantity: nil, weight: nil, distance: 3, duration: 1440)
-# Completion.create(workout_id: Workout.find_by(title: "Valentino's Wednesday Lunch Workout").id, exercise_id: Exercise.find_by(name: 'Bench Press').id, quantity: 10, weight: 135, distance: nil, duration: nil)
+RoutineExercise.create(routine_id: Routine.find_by(name: 'Sweat With Kayla Summer Series - Week 1 - Leg Workout').id, exercise_id: Exercise.find_by(name: 'Bench Hop').id, quantity: 20, weight: nil, distance: nil, duration: nil)
+RoutineExercise.create(routine_id: Routine.find_by(name: 'Sweat With Kayla Summer Series - Week 1 - Leg Workout').id, exercise_id: Exercise.find_by(name: 'Weighted Static Lunge').id, quantity: 24, weight: 20, distance: nil, duration: nil)
+RoutineExercise.create(routine_id: Routine.find_by(name: 'Sweat With Kayla Summer Series - Week 1 - Leg Workout').id, exercise_id: Exercise.find_by(name: 'X Jump').id, quantity: 20, weight: nil, distance: nil, duration: nil)
+RoutineExercise.create(routine_id: Routine.find_by(name: 'Sweat With Kayla Summer Series - Week 1 - Leg Workout').id, exercise_id: Exercise.find_by(name: 'Squat').id, quantity: 15, weight: nil, distance: nil, duration: nil)
+
+Routine.create(name: 'Sweat With Kayla Summer Series - Week 2 - Arm Workout', description: "For a 14-minute workout, complete the 1st four exercises as many times as you can in seven minutes. Once completed, have a 30-60 second break and repeat this process with the 2nd four exercises. For a 28-minute workout, complete both sets again! ")
+
+RoutineExercise.create(routine_id: Routine.find_by(name: 'Sweat With Kayla Summer Series - Week 2 - Arm Workout').id, exercise_id: Exercise.find_by(name: 'Bent-Over Reverse Fly').id, quantity: 15, weight: 20, distance: nil, duration: nil)
+RoutineExercise.create(routine_id: Routine.find_by(name: 'Sweat With Kayla Summer Series - Week 2 - Arm Workout').id, exercise_id: Exercise.find_by(name: 'Lay-Down Push Up').id, quantity: 15, weight: nil, distance: nil, duration: nil)
+RoutineExercise.create(routine_id: Routine.find_by(name: 'Sweat With Kayla Summer Series - Week 2 - Arm Workout').id, exercise_id: Exercise.find_by(name: 'Bicep Curl + Shoulder Press').id, quantity: 15, weight: 20, distance: nil, duration: nil)
+RoutineExercise.create(routine_id: Routine.find_by(name: 'Sweat With Kayla Summer Series - Week 2 - Arm Workout').id, exercise_id: Exercise.find_by(name: 'Stationary Caterpillar Walk').id, quantity: 15, weight: nil, distance: nil, duration: nil)
+
+RoutineExercise.create(routine_id: Routine.find_by(name: 'Sweat With Kayla Summer Series - Week 2 - Arm Workout').id, exercise_id: Exercise.find_by(name: 'Incline Push-Up').id, quantity: 15, weight: nil, distance: nil, duration: nil)
+RoutineExercise.create(routine_id: Routine.find_by(name: 'Sweat With Kayla Summer Series - Week 2 - Arm Workout').id, exercise_id: Exercise.find_by(name: 'Double-Pulse Tricep Dip').id, quantity: 15, weight: nil, distance: nil, duration: nil)
+RoutineExercise.create(routine_id: Routine.find_by(name: 'Sweat With Kayla Summer Series - Week 2 - Arm Workout').id, exercise_id: Exercise.find_by(name: 'Commando').id, quantity: 24, weight: nil, distance: nil, duration: nil)
+RoutineExercise.create(routine_id: Routine.find_by(name: 'Sweat With Kayla Summer Series - Week 2 - Arm Workout').id, exercise_id: Exercise.find_by(name: 'Mountain Climber').id, quantity: 40, weight: nil, distance: nil, duration: nil)
