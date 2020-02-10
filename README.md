@@ -1,24 +1,19 @@
-# README
+# Workout-logger-backend
+Backend codes for Workout Logger(weFit)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Technologies used
+- Ruby on Rails
+- PostgresSQL 11
+- Jbuilder 
 
-Things you may want to cover:
+## Frontend
+Application forntend and instrunctions for setup: [Workout-logger-frontend](https://github.com/valentinowong/workout_logger_front_end)
 
-* Ruby version
+## Instructions
+- bundle install
+- rails db:migrate
+- rails s
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Contributors
+- Valentino Wong
+- Hyoeun Lee
